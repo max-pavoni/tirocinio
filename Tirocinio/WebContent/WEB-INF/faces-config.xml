@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+
+	<managed-bean>
+		<managed-bean-name>prodottoController</managed-bean-name>
+		<managed-bean-class>it.ecommerce.controller.ProdottoController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>clienteController</managed-bean-name>
+		<managed-bean-class>it.ecommerce.controller.ClienteController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>ordineController</managed-bean-name>
+		<managed-bean-class>it.ecommerce.controller.OrdineController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>rigaOrdineController</managed-bean-name>
+		<managed-bean-class>it.ecommerce.controller.RigaOrdineController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>amministratoreController</managed-bean-name>
+		<managed-bean-class>it.ecommerce.controller.AmministratoreController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+		<managed-bean>
+		<managed-bean-name>fornitoreController</managed-bean-name>
+		<managed-bean-class>it.ecommerce.controller.FornitoreController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	 <!-- JSF-security method-->
+   <application>
+     <action-listener>
+       br.com.globalcode.jsf.security.SecureActionListener
+     </action-listener>
+     <navigation-handler>
+       br.com.globalcode.jsf.security.SecureNavigationHandler
+     </navigation-handler>
+   </application> 
+
+	<navigation-rule>
+		<from-view-id>/index.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>prodotti</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>logged</from-outcome>
+			<to-view-id>/clienteHome.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erroreLogin</from-outcome>
+			<to-view-id>/erroreLogin.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/erroreLogin.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>logged</from-outcome>
+			<to-view-id>/clienteHome.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erroreLogin</from-outcome>
+			<to-view-id>/erroreLogin.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/registrazione.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>registrato</from-outcome>
+			<to-view-id>/registratoConSuccesso.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erroreRegistrazione</from-outcome>
+			<to-view-id>/erroreRegistrazione.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/erroreRegistrazione.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>registrato</from-outcome>
+			<to-view-id>/registratoConSuccesso.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erroreRegistrazione</from-outcome>
+			<to-view-id>/erroreRegistrazione.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/clienteHome.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>prodotti</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>clienteHome</from-outcome>
+			<to-view-id>/clienteHome.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/index.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listaOrdini</from-outcome>
+			<to-view-id>/listaOrdini.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/loginAmministratore.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>amministratoreHome</from-outcome>
+			<to-view-id>/amministratoreHome.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erroreAdmin</from-outcome>
+			<to-view-id>/erroreAdmin.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>riprovaLoginAdmin</from-outcome>
+			<to-view-id>/riprovaLoginAdmin.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/riprovaLoginAdmin.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>amministratoreHome</from-outcome>
+			<to-view-id>/amministratoreHome.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+				<navigation-case>
+			<from-outcome>riprovaLoginAdmin</from-outcome>
+			<to-view-id>/riprovaLoginAdmin.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/amministratoreHome.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>prodotti</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/index.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listaOrdiniDaEvadere</from-outcome>
+			<to-view-id>/listaOrdiniDaEvadere.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/prodotto.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>prodottoInserito</from-outcome>
+			<to-view-id>/prodottoInserito.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>prodotti</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+				<navigation-case>
+			<from-outcome>fornitore</from-outcome>
+			<to-view-id>/fornitore.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+				<navigation-case>
+			<from-outcome>modificaProdotto</from-outcome>
+			<to-view-id>/modificaProdotto.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+						<navigation-case>
+			<from-outcome>aggiungiFornitore</from-outcome>
+			<to-view-id>/aggiungiFornitore.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>rimuoviFornitoreDaProdotto</from-outcome>
+			<to-view-id>/rimuoviFornitoreDaProdotto.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/aggiungiProdotto.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>erroreInserimentoProdotto</from-outcome>
+			<to-view-id>/erroreInserimentoProdotto.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>prodottoInserito</from-outcome>
+			<to-view-id>/prodottoInserito.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/erroreInserimentoProdotto.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>prodottoInserito</from-outcome>
+			<to-view-id>/prodottoInserito.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erroreInserimentoProdotto</from-outcome>
+			<to-view-id>/erroreInserimentoProdotto.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/prodottoInserito.jsp</from-view-id>
+				<navigation-case>
+			<from-outcome>aggiungiFornitore</from-outcome>
+			<to-view-id>/aggiungiFornitore.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>prodotti</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+		<navigation-rule>
+		<from-view-id>/aggiungiFornitore.jsp</from-view-id>
+				<navigation-case>
+			<from-outcome>fornitoreAggiunto</from-outcome>
+			<to-view-id>/fornitoreAggiunto.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+						<navigation-case>
+			<from-outcome>erroreInserimentoFornitore</from-outcome>
+			<to-view-id>/erroreInserimentoFornitore.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+				<navigation-rule>
+		<from-view-id>/fornitore.jsp</from-view-id>
+				<navigation-case>
+			<from-outcome>fornitoreEliminato</from-outcome>
+			<to-view-id>/fornitoreEliminato.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+				<navigation-rule>
+		<from-view-id>/rimuoviFornitoreDaProdotto.jsp</from-view-id>
+				<navigation-case>
+			<from-outcome>fornitoreEliminato</from-outcome>
+			<to-view-id>/fornitoreAggiunto.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+						<navigation-case>
+			<from-outcome>erroreRimozioneFornitore</from-outcome>
+			<to-view-id>/erroreRimozioneFornitore.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+					<navigation-rule>
+		<from-view-id>/erroreRimozioneFornitore.jsp</from-view-id>
+				<navigation-case>
+			<from-outcome>fornitoreEliminato</from-outcome>
+			<to-view-id>/fornitoreEliminato.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+						<navigation-case>
+			<from-outcome>erroreRimozioneFornitore</from-outcome>
+			<to-view-id>/erroreRimozioneFornitore.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+				<navigation-rule>
+		<from-view-id>/erroreInserimentoFornitore.jsp</from-view-id>
+				<navigation-case>
+			<from-outcome>fornitoreAggiunto</from-outcome>
+			<to-view-id>/fornitoreAggiunto.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+						<navigation-case>
+			<from-outcome>erroreInserimentoFornitore</from-outcome>
+			<to-view-id>/erroreInserimentoFornitore.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+				<navigation-rule>
+		<from-view-id>/fornitoreAggiunto.jsp</from-view-id>
+				<navigation-case>
+			<from-outcome>aggiungiFornitore</from-outcome>
+			<to-view-id>/aggiungiFornitore.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+						<navigation-case>
+			<from-outcome>prodotti</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/prodotti.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>prodotto</from-outcome>
+			<to-view-id>/prodotto.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>rimuoviProdotto</from-outcome>
+			<to-view-id>/rimuoviProdotto.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/rimuoviProdotto.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>prodotti</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>prodottoRimosso</from-outcome>
+			<to-view-id>/prodottoRimosso.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+		<navigation-rule>
+		<from-view-id>/modificaProdotto.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>prodottoModificato</from-outcome>
+			<to-view-id>/prodottoModificato.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/prodottoRimosso.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>prodotti</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+		<navigation-rule>
+		<from-view-id>/prodottoModificato.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>prodotti</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/listaOrdini.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>ordine</from-outcome>
+			<to-view-id>/ordine.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>chiudiOrdine</from-outcome>
+			<to-view-id>/listaOrdini.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/ordineChiuso.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>listaOrdini</from-outcome>
+			<to-view-id>/listaOrdini.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/ordineEvasoConSuccesso.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>listaOrdiniDaEvadere</from-outcome>
+			<to-view-id>/listaOrdiniDaEvadere.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/listaOrdiniDaEvadere.jsp</from-view-id>
+				<navigation-case>
+			<from-outcome>ordine</from-outcome>
+			<to-view-id>/ordine.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ordineEvaso</from-outcome>
+			<to-view-id>/ordineEvasoConSuccesso.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/ordine.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>listaOrdini</from-outcome>
+			<to-view-id>/listaOrdini.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+				<navigation-case>
+			<from-outcome>prodotto</from-outcome>
+			<to-view-id>/prodotto.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+				<navigation-case>
+			<from-outcome>prodotti</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>rimuoviRiga</from-outcome>
+			<to-view-id>/ordine.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>modificaRigaOrdine</from-outcome>
+			<to-view-id>/modificaRigaOrdine.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+				<navigation-case>
+			<from-outcome>listaOrdiniDaEvadere</from-outcome>
+			<to-view-id>/listaOrdiniDaEvadere.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/modificaRigaOrdine.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>rigaOrdineAggiornata</from-outcome>
+			<to-view-id>/modificaRigaOrdineRiuscita.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ordine</from-outcome>
+			<to-view-id>/ordine.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/modificaRigaOrdineRiuscita.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>ordine</from-outcome>
+			<to-view-id>/ordine.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+</faces-config>
