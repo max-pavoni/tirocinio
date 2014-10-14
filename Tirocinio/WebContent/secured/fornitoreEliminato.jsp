@@ -7,20 +7,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>E-COMMERCE - FORNITORE ELIMINATO</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-			<c:if test="${amministratoreController.amministratore != null }">
+
 <div>
-Prodotto aggiornato con successo!
+Fornitore rimosso con successo!
 </div>
 <f:view>
 <h:form>
-<h:commandLink action="#{prodottoController.listaProdotti}"
-								value="Torna al catalogo" />
+			<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'> Vai al
+				tuo Pannello di Controllo</a>
 								</h:form>
 								</f:view>
-								</c:if>
+					
 </body>
 </html>

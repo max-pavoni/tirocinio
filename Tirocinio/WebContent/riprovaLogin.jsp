@@ -11,19 +11,19 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="background-color: #a8f7ff;">
-	<h1>Ops! Qualcosa e' andato storto..</h1>
+	<h1>Ops! Qualcosa e' andato storto...</h1>
 	<f:view>
 		<h:form>
 			<div>
-				Reinserisci l'e-mail:
-				<h:inputText value="#{responsabileController.email}" required="true"
+				Reinserisci l'e-mail: 
+				<h:inputText value="#{clienteController.email}" required="true"
 					requiredMessage="Questo campo e' obbligatorio!" id="email" />
 				<h:message for="email" />
 			</div>
 
 			<div>
 				Reinserisci la password:
-				<h:inputSecret value="#{responsabileController.password}"
+				<h:inputSecret value="#{clienteController.password}"
 					required="true" requiredMessage="Questo campo e' obbligatorio!"
 					validatorMessage="La password deve contenere almeno 8 caratteri."
 					id="password">
@@ -33,7 +33,7 @@
 			</div>
 			<div>
 				<h:commandButton value="login"
-					action="#{responsabileController.login}" />
+					action="#{clienteController.login}" />
 
 				<a href='<c:url value="/faces/index.jsp" />'>Torna alla HomePage</a>
 

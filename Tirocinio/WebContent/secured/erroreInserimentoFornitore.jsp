@@ -9,10 +9,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>E-COMMERCE - AGGIUNGI FORNITORE</title>
+<title>E-COMMERCE - OOPS!</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
+<h2><b>Il nome inserito risulta gia' associato ad un altro fornitore!</b></h2>
 
 	<f:view>
 		<h:form id="signup">
@@ -60,7 +62,7 @@
 								action="#{prodottoController.confermaInserimentoFornitore(fornitoreController.createFornitore())}" />
 						</p>
 					</div>
-					<a href='<c:url value="/faces/amministratoreHome.jsp" />'>
+					<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'>
 						Torna al tuo Pannello di Controllo</a>
 				</div>
 		</h:form>

@@ -42,7 +42,7 @@
 			</table>
 			<c:choose>
 <c:when test="${clienteController.cliente != null}">
-					<a href='<c:url value="/faces/clienteHome.jsp" />'> Vai
+					<a href='<c:url value="/faces/private/clienteHome.jsp" />'> Vai
 						alla tua Home</a>
 						</c:when>
 						<c:otherwise>
@@ -50,7 +50,7 @@
 
 									
 <c:when test="${amministratoreController.amministratore != null}">
-					<a href='<c:url value="/faces/amministratoreHome.jsp" />'> Vai
+					<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'> Vai
 						al tuo Pannello di Controllo</a>
 						</c:when>
 						<c:otherwise>

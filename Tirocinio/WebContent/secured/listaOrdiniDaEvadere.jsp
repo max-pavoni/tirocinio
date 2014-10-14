@@ -13,7 +13,6 @@
 <body>
 <f:view>
 <h:form>
-<c:if test="${amministratoreController.amministratore != null }">
 <h1>E-COMMERCE</h1>
 <h3>Lista Ordini da Evadere:</h3>
 <table>
@@ -47,9 +46,8 @@
 					</tr>
 				</c:forEach>
 			</table>
-					<a href='<c:url value="/faces/amministratoreHome.jsp" />'> Torna
+					<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'> Torna
 						al tuo Pannello di Controllo</a>
-						</c:if>
 				</h:form>
 				</f:view>
 </body>

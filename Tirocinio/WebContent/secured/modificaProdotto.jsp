@@ -16,9 +16,8 @@
 
 	<f:view>
 		<h:form id="signup">
-			<c:if test="${amministratoreController.amministratore != null }">
 				<div class="header">
-					<h3>Nuovo prodotto:</h3>
+					<h3>Aggiorna il prodotto:</h3>
 					<p>inserisci i dati</p>
 				</div>
 				<div class="sep"></div>
@@ -27,28 +26,21 @@
 						<p>
 							Codice:
 							<h:inputText value="#{prodottoController.codice}" required="true"
-								requiredMessage="Questo campo è obbligatorio!" id="codice" />
+								requiredMessage="Name is mandatory" id="codice" />
 							<h:message for="codice" />
 						</p>
 						<p>
 							Nome:
 							<h:inputText value="#{prodottoController.nome}" required="true"
-								requiredMessage="Questo campo è obbligatorio!" id="nome" />
+								requiredMessage="Code is mandatory" id="nome" />
 							<h:message for="nome" />
 						</p>
 
 						<p>
 							Costo:
 							<h:inputText value="#{prodottoController.costo}" required="true"
-								requiredMessage="Questo campo è obbligatorio!" id="costo" />
+								requiredMessage="Age is mandatory" id="costo" />
 							<h:message for="costo" />
-						</p>
-						<p>
-							Quantita':
-							<h:inputText value="#{prodottoController.quantita}"
-								required="true" requiredMessage="Questo campo è obbligatorio!"
-								id="quantita" />
-							<h:message for="quantita" />
 						</p>
 						<p>
 							Descrizione:
@@ -61,13 +53,12 @@
 						</p>
 						<p>
 							<h:commandButton value="Invia"
-								action="#{prodottoController.createProdotto}" />
+								action="#{prodottoController.modificaProdotto(prodottoController.prodotto)}" />
 						</p>
 					</div>
-					<a href='<c:url value="/faces/amministratoreHome.jsp" />'>
+					<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'>
 						Torna al tuo Pannello di Controllo</a>
 				</div>
-			</c:if>
 		</h:form>
 	</f:view>
 

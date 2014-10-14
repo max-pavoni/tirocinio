@@ -11,7 +11,6 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<c:if test="${clienteController.cliente != null }">
 		<div>Ordine chiuso con successo!</div>
 		<f:view>
 			<h:form>
@@ -20,6 +19,5 @@
 					value="Torna alla lista degli ordini" />
 			</h:form>
 		</f:view>
-	</c:if>
 </body>
 </html>

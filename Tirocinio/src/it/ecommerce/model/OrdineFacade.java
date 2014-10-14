@@ -85,6 +85,10 @@ public class OrdineFacade
 	}
 	
 	public void chiudiOrdine(Ordine ordine) {
+		
+		if(this.getOrdine(ordine.getId()).getChiuso())
+		return;
+		
 		ordine.setChiuso(true);
 		
 		ordine.setDataChiusura(new Date());

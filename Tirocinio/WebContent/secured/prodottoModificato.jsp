@@ -7,20 +7,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>E-COMMERCE - FORNITORE ELIMINATO</title>
+<title>Insert title here</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-Fornitore rimosso con successo!
+Prodotto aggiornato con successo!
 </div>
 <f:view>
 <h:form>
-			<a href='<c:url value="/faces/amministratoreHome.jsp" />'> Vai al
-				tuo Pannello di Controllo</a>
+<h:commandLink action="#{prodottoController.listaProdotti}"
+								value="Torna al catalogo" />
 								</h:form>
 								</f:view>
-					
 </body>
 </html>

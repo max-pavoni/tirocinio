@@ -41,15 +41,6 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	
-	 <!-- JSF-security method-->
-   <application>
-     <action-listener>
-       br.com.globalcode.jsf.security.SecureActionListener
-     </action-listener>
-     <navigation-handler>
-       br.com.globalcode.jsf.security.SecureNavigationHandler
-     </navigation-handler>
-   </application> 
 
 	<navigation-rule>
 		<from-view-id>/index.jsp</from-view-id>
@@ -60,7 +51,7 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>logged</from-outcome>
-			<to-view-id>/clienteHome.jsp</to-view-id>
+			<to-view-id>/private/clienteHome.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
@@ -74,7 +65,7 @@
 		<from-view-id>/erroreLogin.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>logged</from-outcome>
-			<to-view-id>/clienteHome.jsp</to-view-id>
+			<to-view-id>/private/clienteHome.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
@@ -88,7 +79,7 @@
 		<from-view-id>/registrazione.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>registrato</from-outcome>
-			<to-view-id>/registratoConSuccesso.jsp</to-view-id>
+			<to-view-id>/private/registratoConSuccesso.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
@@ -102,7 +93,7 @@
 		<from-view-id>/erroreRegistrazione.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>registrato</from-outcome>
-			<to-view-id>/registratoConSuccesso.jsp</to-view-id>
+			<to-view-id>/private/registratoConSuccesso.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
@@ -113,7 +104,7 @@
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/clienteHome.jsp</from-view-id>
+		<from-view-id>/private/clienteHome.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>prodotti</from-outcome>
 			<to-view-id>/prodotti.jsp</to-view-id>
@@ -121,7 +112,7 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>clienteHome</from-outcome>
-			<to-view-id>/clienteHome.jsp</to-view-id>
+			<to-view-id>/private/clienteHome.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
@@ -131,7 +122,7 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>listaOrdini</from-outcome>
-			<to-view-id>/listaOrdini.jsp</to-view-id>
+			<to-view-id>/private/listaOrdini.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
@@ -140,12 +131,7 @@
 		<from-view-id>/loginAmministratore.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>amministratoreHome</from-outcome>
-			<to-view-id>/amministratoreHome.jsp</to-view-id>
-			<redirect />
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>erroreAdmin</from-outcome>
-			<to-view-id>/erroreAdmin.jsp</to-view-id>
+			<to-view-id>/secured/amministratoreHome.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
@@ -159,7 +145,7 @@
 		<from-view-id>/riprovaLoginAdmin.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>amministratoreHome</from-outcome>
-			<to-view-id>/amministratoreHome.jsp</to-view-id>
+			<to-view-id>/secured/amministratoreHome.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 				<navigation-case>
@@ -170,7 +156,7 @@
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/amministratoreHome.jsp</from-view-id>
+		<from-view-id>/secured/amministratoreHome.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>prodotti</from-outcome>
 			<to-view-id>/prodotti.jsp</to-view-id>
@@ -183,7 +169,7 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>listaOrdiniDaEvadere</from-outcome>
-			<to-view-id>/listaOrdiniDaEvadere.jsp</to-view-id>
+			<to-view-id>/secured/listaOrdiniDaEvadere.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
@@ -192,7 +178,7 @@
 		<from-view-id>/prodotto.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>prodottoInserito</from-outcome>
-			<to-view-id>/prodottoInserito.jsp</to-view-id>
+			<to-view-id>/private/prodottoInserito.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
@@ -207,55 +193,55 @@
 		</navigation-case>
 				<navigation-case>
 			<from-outcome>modificaProdotto</from-outcome>
-			<to-view-id>/modificaProdotto.jsp</to-view-id>
+			<to-view-id>/secured/modificaProdotto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 						<navigation-case>
 			<from-outcome>aggiungiFornitore</from-outcome>
-			<to-view-id>/aggiungiFornitore.jsp</to-view-id>
+			<to-view-id>/secured/aggiungiFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>rimuoviFornitoreDaProdotto</from-outcome>
-			<to-view-id>/rimuoviFornitoreDaProdotto.jsp</to-view-id>
+			<to-view-id>/secured/rimuoviFornitoreDaProdotto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/aggiungiProdotto.jsp</from-view-id>
+		<from-view-id>/secured/aggiungiProdotto.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>erroreInserimentoProdotto</from-outcome>
-			<to-view-id>/erroreInserimentoProdotto.jsp</to-view-id>
+			<to-view-id>/secured/erroreInserimentoProdotto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>prodottoInserito</from-outcome>
-			<to-view-id>/prodottoInserito.jsp</to-view-id>
+			<to-view-id>/private/prodottoInserito.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/erroreInserimentoProdotto.jsp</from-view-id>
+		<from-view-id>/secured/erroreInserimentoProdotto.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>prodottoInserito</from-outcome>
-			<to-view-id>/prodottoInserito.jsp</to-view-id>
+			<to-view-id>/private/prodottoInserito.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>erroreInserimentoProdotto</from-outcome>
-			<to-view-id>/erroreInserimentoProdotto.jsp</to-view-id>
+			<to-view-id>/secured/erroreInserimentoProdotto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
 
 	<navigation-rule>
-		<from-view-id>/prodottoInserito.jsp</from-view-id>
+		<from-view-id>/private/prodottoInserito.jsp</from-view-id>
 				<navigation-case>
 			<from-outcome>aggiungiFornitore</from-outcome>
-			<to-view-id>/aggiungiFornitore.jsp</to-view-id>
+			<to-view-id>/secured/aggiungiFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
@@ -266,15 +252,15 @@
 	</navigation-rule>
 	
 		<navigation-rule>
-		<from-view-id>/aggiungiFornitore.jsp</from-view-id>
+		<from-view-id>/secured/aggiungiFornitore.jsp</from-view-id>
 				<navigation-case>
 			<from-outcome>fornitoreAggiunto</from-outcome>
-			<to-view-id>/fornitoreAggiunto.jsp</to-view-id>
+			<to-view-id>/secured/fornitoreAggiunto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 						<navigation-case>
 			<from-outcome>erroreInserimentoFornitore</from-outcome>
-			<to-view-id>/erroreInserimentoFornitore.jsp</to-view-id>
+			<to-view-id>/secured/erroreInserimentoFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
@@ -283,57 +269,57 @@
 		<from-view-id>/fornitore.jsp</from-view-id>
 				<navigation-case>
 			<from-outcome>fornitoreEliminato</from-outcome>
-			<to-view-id>/fornitoreEliminato.jsp</to-view-id>
+			<to-view-id>/secured/fornitoreEliminato.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	
 				<navigation-rule>
-		<from-view-id>/rimuoviFornitoreDaProdotto.jsp</from-view-id>
+		<from-view-id>/secured/rimuoviFornitoreDaProdotto.jsp</from-view-id>
 				<navigation-case>
 			<from-outcome>fornitoreEliminato</from-outcome>
-			<to-view-id>/fornitoreAggiunto.jsp</to-view-id>
+			<to-view-id>/secured/fornitoreAggiunto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 						<navigation-case>
 			<from-outcome>erroreRimozioneFornitore</from-outcome>
-			<to-view-id>/erroreRimozioneFornitore.jsp</to-view-id>
+			<to-view-id>/secured/erroreRimozioneFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 					<navigation-rule>
-		<from-view-id>/erroreRimozioneFornitore.jsp</from-view-id>
+		<from-view-id>/secured/erroreRimozioneFornitore.jsp</from-view-id>
 				<navigation-case>
 			<from-outcome>fornitoreEliminato</from-outcome>
-			<to-view-id>/fornitoreEliminato.jsp</to-view-id>
+			<to-view-id>/secured/fornitoreEliminato.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 						<navigation-case>
 			<from-outcome>erroreRimozioneFornitore</from-outcome>
-			<to-view-id>/erroreRimozioneFornitore.jsp</to-view-id>
+			<to-view-id>/secured/erroreRimozioneFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	
 				<navigation-rule>
-		<from-view-id>/erroreInserimentoFornitore.jsp</from-view-id>
+		<from-view-id>/secured/erroreInserimentoFornitore.jsp</from-view-id>
 				<navigation-case>
 			<from-outcome>fornitoreAggiunto</from-outcome>
-			<to-view-id>/fornitoreAggiunto.jsp</to-view-id>
+			<to-view-id>/secured/fornitoreAggiunto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 						<navigation-case>
 			<from-outcome>erroreInserimentoFornitore</from-outcome>
-			<to-view-id>/erroreInserimentoFornitore.jsp</to-view-id>
+			<to-view-id>/secured/erroreInserimentoFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	
 				<navigation-rule>
-		<from-view-id>/fornitoreAggiunto.jsp</from-view-id>
+		<from-view-id>/secured/fornitoreAggiunto.jsp</from-view-id>
 				<navigation-case>
 			<from-outcome>aggiungiFornitore</from-outcome>
-			<to-view-id>/aggiungiFornitore.jsp</to-view-id>
+			<to-view-id>/secured/aggiungiFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 						<navigation-case>
@@ -352,36 +338,36 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>rimuoviProdotto</from-outcome>
-			<to-view-id>/rimuoviProdotto.jsp</to-view-id>
+			<to-view-id>/secured/rimuoviProdotto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/rimuoviProdotto.jsp</from-view-id>
+		<from-view-id>/secured/rimuoviProdotto.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>prodotti</from-outcome>
 			<to-view-id>/prodotti.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>prodottoRimosso</from-outcome>
-			<to-view-id>/prodottoRimosso.jsp</to-view-id>
+		<from-outcome>prodottoRimosso</from-outcome>
+			<to-view-id>/secured/prodottoRimosso.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	
 		<navigation-rule>
-		<from-view-id>/modificaProdotto.jsp</from-view-id>
+		<from-view-id>/secured/modificaProdotto.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>prodottoModificato</from-outcome>
-			<to-view-id>/prodottoModificato.jsp</to-view-id>
+			<to-view-id>/secured/prodottoModificato.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/prodottoRimosso.jsp</from-view-id>
+		<from-view-id>/secured/prodottoRimosso.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>prodotti</from-outcome>
 			<to-view-id>/prodotti.jsp</to-view-id>
@@ -390,7 +376,7 @@
 	</navigation-rule>
 	
 		<navigation-rule>
-		<from-view-id>/prodottoModificato.jsp</from-view-id>
+		<from-view-id>/secured/prodottoModificato.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>prodotti</from-outcome>
 			<to-view-id>/prodotti.jsp</to-view-id>
@@ -399,56 +385,56 @@
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/listaOrdini.jsp</from-view-id>
+		<from-view-id>/private/listaOrdini.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>ordine</from-outcome>
-			<to-view-id>/ordine.jsp</to-view-id>
+			<to-view-id>/private/ordine.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>chiudiOrdine</from-outcome>
-			<to-view-id>/listaOrdini.jsp</to-view-id>
+			<to-view-id>/private/listaOrdini.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/ordineChiuso.jsp</from-view-id>
+		<from-view-id>/private/ordineChiuso.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>listaOrdini</from-outcome>
-			<to-view-id>/listaOrdini.jsp</to-view-id>
+			<to-view-id>/private/listaOrdini.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/ordineEvasoConSuccesso.jsp</from-view-id>
+		<from-view-id>/secured/ordineEvasoConSuccesso.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>listaOrdiniDaEvadere</from-outcome>
-			<to-view-id>/listaOrdiniDaEvadere.jsp</to-view-id>
+			<to-view-id>/secured/listaOrdiniDaEvadere.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/listaOrdiniDaEvadere.jsp</from-view-id>
+		<from-view-id>/secured/listaOrdiniDaEvadere.jsp</from-view-id>
 				<navigation-case>
 			<from-outcome>ordine</from-outcome>
-			<to-view-id>/ordine.jsp</to-view-id>
+			<to-view-id>/private/ordine.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>ordineEvaso</from-outcome>
-			<to-view-id>/ordineEvasoConSuccesso.jsp</to-view-id>
+			<to-view-id>/secured/ordineEvasoConSuccesso.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/ordine.jsp</from-view-id>
+		<from-view-id>/private/ordine.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>listaOrdini</from-outcome>
-			<to-view-id>/listaOrdini.jsp</to-view-id>
+			<to-view-id>/private/listaOrdini.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 				<navigation-case>
@@ -463,40 +449,40 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>rimuoviRiga</from-outcome>
-			<to-view-id>/ordine.jsp</to-view-id>
+			<to-view-id>/private/ordine.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>modificaRigaOrdine</from-outcome>
-			<to-view-id>/modificaRigaOrdine.jsp</to-view-id>
+			<to-view-id>/private/modificaRigaOrdine.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 				<navigation-case>
 			<from-outcome>listaOrdiniDaEvadere</from-outcome>
-			<to-view-id>/listaOrdiniDaEvadere.jsp</to-view-id>
+			<to-view-id>/secured/listaOrdiniDaEvadere.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/modificaRigaOrdine.jsp</from-view-id>
+		<from-view-id>/private/modificaRigaOrdine.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>rigaOrdineAggiornata</from-outcome>
-			<to-view-id>/modificaRigaOrdineRiuscita.jsp</to-view-id>
+			<to-view-id>/private/modificaRigaOrdineRiuscita.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>ordine</from-outcome>
-			<to-view-id>/ordine.jsp</to-view-id>
+			<to-view-id>/private/ordine.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>/modificaRigaOrdineRiuscita.jsp</from-view-id>
+		<from-view-id>/private/modificaRigaOrdineRiuscita.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>ordine</from-outcome>
-			<to-view-id>/ordine.jsp</to-view-id>
+			<to-view-id>/private/ordine.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>

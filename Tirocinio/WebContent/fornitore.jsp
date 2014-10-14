@@ -25,13 +25,19 @@
 				<p>Mail: ${fornitoreController.fornitore.mail}</p>
 				<p>Telefono: ${fornitoreController.fornitore.telefono}</p>
 				</br>
-
+<c:if test="${amministratoreController.amministratore != null }">
 				<h:commandLink action="#{fornitoreController.eliminaFornitore()}"
 					value="Elimina Fornitore">
 				</h:commandLink>
+				</c:if>
 			</div>
-			<a href='<c:url value="/faces/amministratoreHome.jsp" />'> Vai al
+			<c:if test="${amministratoreController.amministratore != null }">
+			<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'> Vai al
 				tuo Pannello di Controllo</a>
+				</c:if>
+		<c:if test="${clienteController.cliente != null }">
+					<a href='<c:url value="/faces/private/clienteHome.jsp" />'> Vai alla tua Home</a>
+		</c:if>
 		</h:form>
 	</f:view>
 </body>

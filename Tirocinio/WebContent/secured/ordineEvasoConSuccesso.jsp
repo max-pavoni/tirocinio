@@ -7,24 +7,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>E-COMMERCE - ORDINE EVASO!</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-Prodotto inserito con successo!
+Ordine evaso con successo!
 </div>
 <f:view>
 <h:form>
-
-<h:commandLink action="#{prodottoController.aggiungiFornitore(prodottoController.prodotto)}"
-								value="Aggiungi un fornitore al prodotto" />
-
-<h:commandLink action="#{prodottoController.listaProdotti}"
-								value="Torna al catalogo" />
+<h:commandLink action="#{ordineController.listaOrdiniDaEvadere}"
+								value="Torna alla lista degl ordini da evadere" />
 								</h:form>
 								</f:view>
-
 </body>
 </html>

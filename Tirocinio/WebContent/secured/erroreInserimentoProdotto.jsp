@@ -13,7 +13,7 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-		<c:if test="${amministratoreController.amministratore != null }">
+
 <h2><b>Il codice inserito risulta gia' associato ad un altro prodotto!</b></h2>
 <f:view>
 
@@ -67,7 +67,6 @@
 				</div>
 				</h:form>
 	</f:view>
-	</c:if>
 
 </body>
 </html>

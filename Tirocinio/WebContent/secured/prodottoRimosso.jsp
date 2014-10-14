@@ -11,7 +11,6 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-			<c:if test="${amministratoreController.amministratore != null }">
 <div>
 Prodotto rimosso con successo!
 </div>
@@ -21,6 +20,5 @@ Prodotto rimosso con successo!
 								value="Torna al catalogo" />
 								</h:form>
 								</f:view>
-								</c:if>
 </body>
 </html>

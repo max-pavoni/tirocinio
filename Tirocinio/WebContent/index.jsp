@@ -54,7 +54,7 @@
 					</p>
 				</c:when>
 				<c:otherwise>
-					<a href='<c:url value="/faces/amministratoreHome.jsp" />'> Vai
+					<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'> Vai
 						al Pannello di Controllo</a>
 				</c:otherwise>
 			</c:choose>

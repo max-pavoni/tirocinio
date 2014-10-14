@@ -7,17 +7,16 @@
 <html>
 <head>
 <title>E-COMMERCE - REGISTRAZIONE EFFETTUATA!</title>
-<meta http-equiv="refresh" content="2; url=faces/clienteHome.jsp" />
+<meta http-equiv="refresh" content="2; url=faces/private/clienteHome.jsp" />
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="background-color: #a8f7ff;">
-			<c:if test="${clienteController.cliente != null }">
+
 	<f:view>
 
 		<h1>Registrazione effettuata con successo!</h1>
 		<h2>(A breve verrai reindirizzato alla tua Home)</h2>
 
 	</f:view>
-	</c:if>
 </body>
 </html>

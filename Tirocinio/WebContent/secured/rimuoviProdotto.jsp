@@ -7,11 +7,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>E-COMMERCE - SELEZIONA PRODOTTO</title>
+<title>E-COMMERCE - RIMUOVI PRODOTTO</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-			<c:if test="${clienteController.cliente != null }">
 	<f:view>
 		<h3>DETTAGLI PRODOTTO</h3>
 		<div>Codice: ${prodottoController.prodotto.codice}</div>
@@ -22,20 +21,19 @@
 
 		</br>
 
-		<div>Stai per inserire questo prodotto nel tuo ordine. Sei
+		<div>Stai per rimuovere questo prodotto dal catalogo. Nessun cliente potra' piu' ordinare questo prodotto. Sei
 			sicuro?</div>
 
 		</br>
 
 		<h:form>
-			<h:commandLink action="#{rigaOrdineController.createRigaOrdine(prodottoController.prodotto, ordineController.getOrdineAperto(clienteController.cliente))}"
-				value="Conferma ordine">
+			<h:commandLink action="#{prodottoController.confermaRimozioneProdotto(prodottoController.prodotto, rigaOrdineController.getRigheOrdineByProdotto(prodottoController.prodotto))}"
+				value="Rimuovi Prodotto">
 			</h:commandLink>
 			<h:commandLink action="#{prodottoController.listaProdotti}"
 				value="Torna al catalogo">
 			</h:commandLink>
 		</h:form>
 	</f:view>
-	</c:if>
 </body>
 </html>

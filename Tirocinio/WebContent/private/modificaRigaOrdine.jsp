@@ -13,7 +13,6 @@
 <body>
 	<f:view>
 			<h:form>
-			<c:if test="${clienteController.cliente != null }">
 			
 		<h3>DETTAGLI PRODOTTO IN ORDINE</h3>
 		<div>Codice: ${rigaOrdineController.rigaOrdine.prodotto.codice}</div>
@@ -41,7 +40,6 @@
 			<h:commandLink action="#{ordineController.findOrdine(rigaOrdineController.rigaOrdine.ordine.id)}"
 				value="Torna all'ordine">
 			</h:commandLink>
-			</c:if>
 		</h:form>
 	</f:view>
 </body>

@@ -52,7 +52,7 @@
 					action="#{amministratoreController.registraAmministratore}" />
 
 			</div>
-			<li><a href='<c:url value="/faces/amministratoreHome.jsp" />'>Torna
+			<li><a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'>Torna
 					al Pannello di Controllo</a></li>
 		</h:form>
 	</f:view>

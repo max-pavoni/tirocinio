@@ -12,8 +12,6 @@
 </head>
 <body>
 	<f:view>
-		<c:choose>
-			<c:when test="${clienteController.cliente != null}">
 				<h1>Ciao ${clienteController.cliente.nome}!</h1>
 				<h2>Cosa vuoi fare?</h2>
 				<ul>
@@ -26,10 +24,6 @@
 								value="Logout" /></li>
 					</h:form>
 				</ul>
-			</c:when>
-			<c:otherwise>
-				<h2>Non hai le credenziali per accedere alla pagina!</h2>
-			</c:otherwise>
-		</c:choose>
+
 	</f:view>
 </html>

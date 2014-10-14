@@ -11,7 +11,6 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	 		<c:if test="${clienteController.cliente != null || amministratoreController.amministratore != null}">
 	<f:view>
 		<h3>DETTAGLI ORDINE</h3>
 		</br>
@@ -66,7 +65,7 @@
 				<li><h:commandLink
 						action="#{ordineController.listaOrdini(clienteController.cliente)}"
 						value="Torna allo storico dei tuoi ordini" /></li>
-				<li><a href='<c:url value="/faces/clienteHome.jsp" />'>Torna
+				<li><a href='<c:url value="/faces/private/clienteHome.jsp" />'>Torna
 						alla Home</a></li>
 			</ul>
 			</c:when>
@@ -80,6 +79,5 @@
 			</c:choose>
 		</h:form>
 	</f:view>
-	</c:if>
 </body>
 </html>

@@ -1,4 +1,4 @@
 eclipse.preferences.version=1
-encoding//WebContent/listaOrdini.jsp=UTF-8
-encoding//WebContent/ordine.jsp=UTF-8
+encoding//WebContent/private/listaOrdini.jsp=UTF-8
+encoding//WebContent/private/ordine.jsp=UTF-8
 encoding//WebContent/riprovaLoginAdmin.jsp=UTF-8

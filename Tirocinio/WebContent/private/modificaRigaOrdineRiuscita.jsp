@@ -11,7 +11,6 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-		<c:if test="${clienteController.cliente != null }">
 	<div>Ordine aggiornato con successo!</div>
 	<f:view>
 		<h:form>
@@ -20,11 +19,10 @@
 			<h:commandLink
 				action="#{ordineController.findOrdine(rigaOrdineController.rigaOrdine.ordine.id)}"
 				value="Torna all'ordine" />
-								<a href='<c:url value="/faces/clienteHome.jsp" />'> Vai
+								<a href='<c:url value="/faces/private/clienteHome.jsp" />'> Vai
 						alla tua Home</a>
 						
 		</h:form>
 	</f:view>
-	</c:if>
 </body>
 </html>

@@ -13,7 +13,6 @@
 <body>
 <f:view>
 <h:form>
-<c:if test="${clienteController.cliente != null }">
 <h1>E-COMMERCE</h1>
 <h3>Lista Ordini Aperti:</h3>
 <table>
@@ -34,7 +33,9 @@
 							<td>${ordine.dataApertura}</td>
 						<td align=right>${ordine.costoTotale} $</td>
 						<td>
+						<c:if test="${ordine.costoTotale > 0}">
 						<h:commandButton action="#{ordineController.chiudiOrdine(ordine)}" value="Chiudi ordine"/>
+						</c:if>
 						</td>
 						
 					</tr>
@@ -75,9 +76,8 @@
 					</c:if>
 				</c:forEach>
 			</table>
-			<a href='<c:url value="/faces/clienteHome.jsp" />'>Torna
+			<a href='<c:url value="/faces/private/clienteHome.jsp" />'>Torna
 						alla Home</a>
-</c:if>
 				</h:form>
 				</f:view>
 </body>

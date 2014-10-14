@@ -13,13 +13,12 @@
 <body>
 	<f:view>
 		<h:form>
-			<c:choose>
-				<c:when test="${amministratoreController.amministratore != null}">
+
 					<h1>Bentornato
 						${amministratoreController.amministratore.nome}!</h1>
 					<h2>Pannello di controllo:</h2>
 					<ul>		
-							<li><a href='<c:url value="/faces/aggiungiProdotto.jsp" />'>Aggiungi
+							<li><a href='<c:url value="/faces/secured/aggiungiProdotto.jsp" />'>Aggiungi
 						un Prodotto</a></li>
 						<li><h:commandLink action="#{prodottoController.listaProdotti}"
 								value="Vai al catalogo" /></li>
@@ -34,11 +33,7 @@
 								action="#{amministratoreController.logout}" value="Logout" /></li>
 
 					</ul>
-				</c:when>
-				<c:otherwise>
-					<h2>Non hai le credenziali per accedere alla pagina!</h2>
-				</c:otherwise>
-			</c:choose>
+
 		</h:form>
 	</f:view>
 </html>
