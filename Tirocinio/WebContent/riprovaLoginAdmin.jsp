@@ -14,7 +14,7 @@
 	<h1>Ops! Qualcosa e' andato storto..</h1>
 	<f:view>
 		<h:form>
-<div>
+			<div>
 				Reinserisci il Pin:
 				<h:inputText value="#{amministratoreController.pin}" required="true"
 					requiredMessage="Questo campo è obbligatorio!" id="pin" />

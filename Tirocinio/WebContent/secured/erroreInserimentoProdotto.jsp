@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -14,17 +14,19 @@
 </head>
 <body>
 
-<h2><b>Il codice inserito risulta gia' associato ad un altro prodotto!</b></h2>
-<f:view>
+	<h2>
+		<b>Il codice inserito risulta gia' associato ad un altro prodotto!</b>
+	</h2>
+	<f:view>
 
-				<h:form id = "signup">
-					<div class="header">
-						<h3>Nuovo prodotto:</h3>
-						<p>inserisci i dati</p>
-					</div>
-				<div class="sep"></div>
-				<div class="inputs">
-					<div align="left">
+		<h:form id="signup">
+			<div class="header">
+				<h3>Nuovo prodotto:</h3>
+				<p>inserisci i dati</p>
+			</div>
+			<div class="sep"></div>
+			<div class="inputs">
+				<div align="left">
 					<p>
 						Codice:
 						<h:inputText value="#{prodottoController.codice}" required="true"
@@ -33,8 +35,8 @@
 					</p>
 					<p>
 						Nome:
-						<h:inputText value="#{prodottoController.nome}"
-							required="true" requiredMessage="Code is mandatory" id="nome" />
+						<h:inputText value="#{prodottoController.nome}" required="true"
+							requiredMessage="Code is mandatory" id="nome" />
 						<h:message for="nome" />
 					</p>
 
@@ -47,25 +49,26 @@
 					<p>
 						Quantita':
 						<h:inputText value="#{prodottoController.quantita}"
-							required="true" requiredMessage="Number is mandatory" id="quantita" />
+							required="true" requiredMessage="Number is mandatory"
+							id="quantita" />
 						<h:message for="quantita" />
 					</p>
 					<p>
-							Descrizione:
-							<h:inputTextarea value="#{prodottoController.descrizione}"
-								cols="20" rows="9" validatorMessage="max 250 caratteri"
-								id="descrizione">
-								<f:validateLength maximum="250" />
-							</h:inputTextarea>
-							<h:message for="descrizione" />
-						</p>
+						Descrizione:
+						<h:inputTextarea value="#{prodottoController.descrizione}"
+							cols="20" rows="9" validatorMessage="max 250 caratteri"
+							id="descrizione">
+							<f:validateLength maximum="250" />
+						</h:inputTextarea>
+						<h:message for="descrizione" />
+					</p>
 					<p>
 						<h:commandButton value="Invia"
 							action="#{prodottoController.createProdotto}" />
 					</p>
-					</div>
 				</div>
-				</h:form>
+			</div>
+		</h:form>
 	</f:view>
 
 </body>

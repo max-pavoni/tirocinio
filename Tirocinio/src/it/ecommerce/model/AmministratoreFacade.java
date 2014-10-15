@@ -13,7 +13,7 @@ public class AmministratoreFacade {
 	@PersistenceContext(unitName = "ecommerce-unit")
 	private EntityManager em;
 
-	
+
 	public Amministratore createAmministratore(String nome, String cognome, String pin, String password) throws Exception {
 		try {
 			Amministratore amministratore = new Amministratore(nome, cognome, pin, password);
@@ -47,7 +47,7 @@ public class AmministratoreFacade {
 		else
 			return null;
 	}
-	
+
 	/**
 	 * cerca con una query nel DB l'amministratore corrispondente al pin passato come parametro.
 	 * Se non lo trova ritorna null.
@@ -59,7 +59,7 @@ public class AmministratoreFacade {
 		trovaAmministratore.setParameter("pin", pin);
 		Amministratore amministratore;
 		try {
-		amministratore = (Amministratore)trovaAmministratore.getSingleResult();
+			amministratore = (Amministratore)trovaAmministratore.getSingleResult();
 		}
 		catch (Exception e) {
 			amministratore = null;

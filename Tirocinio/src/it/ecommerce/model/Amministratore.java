@@ -23,21 +23,21 @@ public class Amministratore {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	@Column(nullable=false)
 	private String nome;
-	
+
 	@Column(nullable=false)
 	private String cognome;
-	
+
 	@Column(nullable=false)
 	@Unique
 	private String pin;
-	
+
 	@Column(nullable=false)
 	private String password;
 
-	
+
 	public Amministratore(String nome, String cognome, String pin, String password) {
 		super();
 		this.nome = nome;

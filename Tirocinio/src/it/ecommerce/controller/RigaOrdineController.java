@@ -24,62 +24,63 @@ public class RigaOrdineController {
 	private Ordine ordine;
 	private Prodotto prodotto;
 	private RigaOrdine rigaOrdine;
-	
+
 	@EJB(beanName="roFacade")
 	private RigaOrdineFacade rigaOrdineFacade;
-	
+
 	public RigaOrdineController() {}
 
+	//verifica se il prodotto è gia' presente nel carrello (o ordine aperto)
 	public boolean prodottoGiaInCarrello(Prodotto prodotto, Ordine ordine) {
-		
+
 		if(ordine == null) {
 			return false;
 		}
-		
+
 		else return this.rigaOrdineFacade.prodottoGiaInCarrello(prodotto, ordine);
-		
+
 	}
-	
+
 	public String createRigaOrdine(Prodotto prodotto, Ordine ordine) {
-		
+
 		this.rigaOrdine = this.rigaOrdineFacade.createRigaOrdine(prodotto, ordine, this.quantita);
 		this.quantita = null;
-		
+
 		return "prodottoInserito";
 	}
-	
+
 	public List<RigaOrdine> getRigheOrdineByProdotto(Prodotto prodotto) {
-		
+
 		List<RigaOrdine> righeOrdine = this.rigaOrdineFacade.getRigheOrdineByProdotto(prodotto);
-		
+
 		return righeOrdine;
 	}
-	
+
 	public String getRigaOrdine(Long id) {
-		
+
 		this.quantita = null;
 		this.rigaOrdine = this.rigaOrdineFacade.findRigaOrdine(id);
-		
-	
+
+
 		return "modificaRigaOrdine";
-				
+
 	}
-	
+
 	public String modificaRigaOrdine(Long id) {
-		
+
 		this.rigaOrdine = this.rigaOrdineFacade.modificaRigaOrdine(id, this.quantita);
-	
+
 		return "rigaOrdineAggiornata";
-				
+
 	}
-	
+
 	public void rimuoviRigaOrdine(Long id, OrdineController ordineController, Long ordineId) {
-		
+
 		this.rigaOrdineFacade.rimuoviRigaOrdine(id);
 		ordineController.findOrdine(ordineId);
-		
+
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -175,7 +176,7 @@ public class RigaOrdineController {
 		return true;
 	}
 
-	
-	
-	
+
+
+
 }

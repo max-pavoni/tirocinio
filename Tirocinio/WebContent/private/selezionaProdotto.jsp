@@ -27,7 +27,8 @@
 		</br>
 
 		<h:form>
-			<h:commandLink action="#{rigaOrdineController.createRigaOrdine(prodottoController.prodotto, ordineController.getOrdineAperto(clienteController.cliente))}"
+			<h:commandLink
+				action="#{rigaOrdineController.createRigaOrdine(prodottoController.prodotto, ordineController.getOrdineAperto(clienteController.cliente))}"
 				value="Conferma ordine">
 			</h:commandLink>
 			<h:commandLink action="#{prodottoController.listaProdotti}"

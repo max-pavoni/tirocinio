@@ -7,7 +7,8 @@
 <html>
 <head>
 <title>E-COMMERCE - REGISTRAZIONE EFFETTUATA!</title>
-<meta http-equiv="refresh" content="2; url=faces/private/clienteHome.jsp" />
+<meta http-equiv="refresh"
+	content="2; url=faces/private/clienteHome.jsp" />
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="background-color: #a8f7ff;">

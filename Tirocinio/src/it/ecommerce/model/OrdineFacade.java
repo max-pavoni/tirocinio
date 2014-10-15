@@ -25,28 +25,29 @@ public class OrdineFacade
 		}
 		return ordine;
 	}
-	
+
+	//cerca un ordine aperto nella lista degli ordini del cliente: se non lo trova ne crea uno.
 	public Ordine getOrdineAperto(Cliente cliente) {
 		Ordine ordine;
 		try { 
-		ordine = em.createNamedQuery("trovaOrdineApertoByCliente", Ordine.class).setParameter("cliente", cliente).getSingleResult();
+			ordine = em.createNamedQuery("trovaOrdineApertoByCliente", Ordine.class).setParameter("cliente", cliente).getSingleResult();
 		}
 		catch(NoResultException e) {
 			ordine = new Ordine(cliente, new Date(), false, false);
 			em.persist(ordine);
 			return ordine;
 		}
-		
+
 		return ordine;
-		
+
 	}
-	
+
 	public List<Ordine> getAllOrdiniByCliente(Cliente cliente) {
-		
+
 		List<Ordine> ordini;
-		
+
 		try {
-			
+
 			ordini = this.em.createNamedQuery("trovaOrdiniByCliente", Ordine.class).setParameter("cliente", cliente).getResultList();
 			for(Ordine ordine : ordini) {
 				double costo=0.0;
@@ -56,25 +57,25 @@ public class OrdineFacade
 				em.merge(ordine);
 			}
 		}
-		
+
 		catch(NoResultException e) {
 			return null;
 		}
-		
+
 		return ordini;
 	}
-	
+
 	public Ordine getOrdine(Long id) {
-		
+
 		Ordine ordine;
 		ordine = em.find(Ordine.class, id);
 		return ordine;
 	}
-	
+
 	public List<Ordine> GetAllOrdiniDaEvadere() {
-		
+
 		List<Ordine> ordini;
-		
+
 		try {
 			ordini = this.em.createNamedQuery("trovaOrdiniDaEvadere", Ordine.class).getResultList();
 		}
@@ -83,41 +84,43 @@ public class OrdineFacade
 		}
 		return ordini;
 	}
-	
+
 	public void chiudiOrdine(Ordine ordine) {
-		
+
 		if(this.getOrdine(ordine.getId()).getChiuso())
-		return;
-		
+			return;
+
 		ordine.setChiuso(true);
-		
+
 		ordine.setDataChiusura(new Date());
 		em.merge(ordine);
-		
+
 	}
 
+	//verifica se un ordine ha i requisiti per essere evaso.
 	public boolean ordineProntoPerEssereEvaso(Ordine ordine) {
-		
+
 		for(RigaOrdine r : ordine.getRigheOrdine()) {
 			if(r.getQuantita() > r.getProdotto().getQuantita())
-			return false;
+				return false;
 		}
-		
+
 		return true;
-		
+
 	}
-	
+
+
 	public void evadiOrdine(Long id) {
-		
+
 		Ordine ordine = this.getOrdine(id);
 		if(ordineProntoPerEssereEvaso(ordine)) {
 			ordine.setEvaso(true);
-		for(RigaOrdine r : ordine.getRigheOrdine()) {
-			r.getProdotto().setQuantita(r.getProdotto().getQuantita()-r.getQuantita());
-			em.merge(r.getProdotto());
+			for(RigaOrdine r : ordine.getRigheOrdine()) {
+				r.getProdotto().setQuantita(r.getProdotto().getQuantita()-r.getQuantita());
+				em.merge(r.getProdotto());
+			}
 		}
-		}
-		
+
 	}
 
 }

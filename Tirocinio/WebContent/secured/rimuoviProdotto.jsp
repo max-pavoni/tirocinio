@@ -21,13 +21,14 @@
 
 		</br>
 
-		<div>Stai per rimuovere questo prodotto dal catalogo. Nessun cliente potra' piu' ordinare questo prodotto. Sei
-			sicuro?</div>
+		<div>Stai per rimuovere questo prodotto dal catalogo. Nessun
+			cliente potra' piu' ordinare questo prodotto. Sei sicuro?</div>
 
 		</br>
 
 		<h:form>
-			<h:commandLink action="#{prodottoController.confermaRimozioneProdotto(prodottoController.prodotto, rigaOrdineController.getRigheOrdineByProdotto(prodottoController.prodotto))}"
+			<h:commandLink
+				action="#{prodottoController.confermaRimozioneProdotto(prodottoController.prodotto, rigaOrdineController.getRigheOrdineByProdotto(prodottoController.prodotto))}"
 				value="Rimuovi Prodotto">
 			</h:commandLink>
 			<h:commandLink action="#{prodottoController.listaProdotti}"

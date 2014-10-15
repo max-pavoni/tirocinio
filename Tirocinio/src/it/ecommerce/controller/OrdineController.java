@@ -26,69 +26,70 @@ public class OrdineController {
 	private Boolean evaso;
 	private Ordine ordine;
 	private List<Ordine> ordini;
-	
+
 	@EJB(beanName="oFacade")
 	private OrdineFacade ordineFacade;
-	
+
 	public OrdineController() {}
 
 	public String createOrdine(Cliente cliente) {
 		this.ordine = this.ordineFacade.createOrdine(cliente);
 		return "catalogoCliente";
 	}
-	
-	//restituisce un ordine aperto: se esiste gia' lo restituisce, altrimenti ne crea uno nuovo.
+
+	//restituisce un ordine aperto se esiste, altrimenti ne crea uno nuovo.
 	public Ordine getOrdineAperto(Cliente cliente) {
-		
+
 		this.ordine = this.ordineFacade.getOrdineAperto(cliente);
-		
+
 		return this.ordine;
-		
+
 	}
-	
+
 	public String listaOrdini(Cliente cliente) {
-		
+
 		this.ordini = this.ordineFacade.getAllOrdiniByCliente(cliente);
-		
+
 		return "listaOrdini";
 	}
-	
+
 	public String findOrdine(Long id) {
-		
+
 		this.ordine = this.ordineFacade.getOrdine(id);
-		
+
 		return "ordine";
 	}
-	
+
 	public String chiudiOrdine(Ordine ordine) {
-		
+
 		this.ordineFacade.chiudiOrdine(ordine);
-		
+
 		return "ordineChiuso";
-		
-		
+
+
 	}
-	
+
 	public String listaOrdiniDaEvadere() {
-		
+
 		this.ordini = this.ordineFacade.GetAllOrdiniDaEvadere();
-		
+
 		return "listaOrdiniDaEvadere";
-		
+
 	}
-	
+
 	public String evadiOrdine(Long id) {
-		
+
 		this.ordineFacade.evadiOrdine(id);
 		return "ordineEvaso";
 
-		
+
 	}
-	
+
+	//verifica se un ordine ha i requisiti per essere evaso
 	public Boolean ordineProntoPerEssereEvaso(Ordine ordine) {
 		return this.ordineFacade.ordineProntoPerEssereEvaso(ordine);
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -243,7 +244,7 @@ public class OrdineController {
 			return false;
 		return true;
 	}
-	
-	
-	
+
+
+
 }

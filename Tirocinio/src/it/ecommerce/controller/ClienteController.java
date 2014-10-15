@@ -17,7 +17,7 @@ import javax.faces.context.FacesContext;
 @ManagedBean
 @SessionScoped
 public class ClienteController {
-	
+
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
 	private String email;
@@ -36,7 +36,7 @@ public class ClienteController {
 
 	@EJB(beanName="cFacade")
 	private ClienteFacade clienteFacade;
-	
+
 	public ClienteController() {}
 
 	public String registraCliente(){
@@ -63,7 +63,7 @@ public class ClienteController {
 		this.cliente = clienteFacade.autentica(this.email, this.password);
 
 		if(this.cliente!=null) {
-			
+
 			return "logged";
 		}
 		else {
@@ -198,7 +198,7 @@ public class ClienteController {
 	public void setAnno(Integer anno) {
 		this.anno = anno;
 	}
-		
+
 
 
 

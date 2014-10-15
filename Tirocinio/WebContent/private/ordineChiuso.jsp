@@ -11,13 +11,13 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-		<div>Ordine chiuso con successo!</div>
-		<f:view>
-			<h:form>
-				<h:commandLink
-					action="#{ordineController.listaOrdini(clienteController.cliente)}"
-					value="Torna alla lista degli ordini" />
-			</h:form>
-		</f:view>
+	<div>Ordine chiuso con successo!</div>
+	<f:view>
+		<h:form>
+			<h:commandLink
+				action="#{ordineController.listaOrdini(clienteController.cliente)}"
+				value="Torna alla lista degli ordini" />
+		</h:form>
+	</f:view>
 </body>
 </html>

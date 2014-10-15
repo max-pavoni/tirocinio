@@ -29,7 +29,7 @@
 		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
 	</listener>
 
-		<!-- Login filter admin -->
+	<!-- Login filter admin -->
 	<filter>
 		<filter-name>LoginAdminFilter</filter-name>
 		<filter-class>it.ecommerce.filter.LoginAdminFilter</filter-class>

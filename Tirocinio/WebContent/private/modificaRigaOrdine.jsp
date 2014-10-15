@@ -12,32 +12,38 @@
 </head>
 <body>
 	<f:view>
-			<h:form>
-			
-		<h3>DETTAGLI PRODOTTO IN ORDINE</h3>
-		<div>Codice: ${rigaOrdineController.rigaOrdine.prodotto.codice}</div>
-		<div>Nome: ${rigaOrdineController.rigaOrdine.prodotto.nome}</div>
-		<div>Costo: ${rigaOrdineController.rigaOrdine.prodotto.costo}</div>
-		<div>Quantita': ${rigaOrdineController.rigaOrdine.quantita}</div>
-		
+		<h:form>
+
+			<h3>DETTAGLI PRODOTTO IN ORDINE</h3>
+			<div>Codice: ${rigaOrdineController.rigaOrdine.prodotto.codice}</div>
+			<div>Nome: ${rigaOrdineController.rigaOrdine.prodotto.nome}</div>
+			<div>Costo: ${rigaOrdineController.rigaOrdine.prodotto.costo}</div>
+			<div>Quantita': ${rigaOrdineController.rigaOrdine.quantita}</div>
 
 
 
-		</br>
 
-		<div>Inserisci la nuova quantita' da ordinare:</div><div><h:inputText value="#{rigaOrdineController.quantita}"
-								required="true" requiredMessage="Questo campo e' obbligatorio!"
-								id="quantita" validatorMessage="Il valore inserito non e' valido!"
-								converterMessage="Il valore inserito deve essere un numero!">
-								<f:validateLongRange minimum="1" />
-								<h:message for="quantita" />
-							</h:inputText>
-							<h:commandButton action="#{rigaOrdineController.modificaRigaOrdine(rigaOrdineController.rigaOrdine.id)}" value="Conferma"/></div>
+			</br>
 
-		</br>
+			<div>Inserisci la nuova quantita' da ordinare:</div>
+			<div>
+				<h:inputText value="#{rigaOrdineController.quantita}"
+					required="true" requiredMessage="Questo campo e' obbligatorio!"
+					id="quantita" validatorMessage="Il valore inserito non e' valido!"
+					converterMessage="Il valore inserito deve essere un numero!">
+					<f:validateLongRange minimum="1" />
+					<h:message for="quantita" />
+				</h:inputText>
+				<h:commandButton
+					action="#{rigaOrdineController.modificaRigaOrdine(rigaOrdineController.rigaOrdine.id)}"
+					value="Conferma" />
+			</div>
+
+			</br>
 
 
-			<h:commandLink action="#{ordineController.findOrdine(rigaOrdineController.rigaOrdine.ordine.id)}"
+			<h:commandLink
+				action="#{ordineController.findOrdine(rigaOrdineController.rigaOrdine.ordine.id)}"
 				value="Torna all'ordine">
 			</h:commandLink>
 		</h:form>

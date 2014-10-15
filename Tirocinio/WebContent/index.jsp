@@ -26,8 +26,7 @@
 				<c:when test="${clienteController.cliente == null}">
 					<div>
 						e-mail:
-						<h:inputText value="#{clienteController.email}" 
-							 id="email" />
+						<h:inputText value="#{clienteController.email}" id="email" />
 						<h:message for="email" />
 						password:
 						<h:inputSecret value="#{clienteController.password}">
@@ -46,7 +45,7 @@
 				</c:otherwise>
 
 			</c:choose>
-<c:choose>
+			<c:choose>
 				<c:when test="${amministratoreController.amministratore == null}">
 					<p>
 						<a href='<c:url value="/faces/loginAmministratore.jsp" />'>
@@ -54,8 +53,8 @@
 					</p>
 				</c:when>
 				<c:otherwise>
-					<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'> Vai
-						al Pannello di Controllo</a>
+					<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'>
+						Vai al Pannello di Controllo</a>
 				</c:otherwise>
 			</c:choose>
 

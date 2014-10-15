@@ -12,9 +12,12 @@
 <body style="background-color: #a8f7ff;">
 	<hgroup>
 		<h1>BENVENUTO SU E-COMMERCE</h1>
-		
-		<h2><b>La mail inserita risulta gia' utilizzata! Prova con un altro indirizzo.</b></h2>
-		
+
+		<h2>
+			<b>La mail inserita risulta gia' utilizzata! Prova con un altro
+				indirizzo.</b>
+		</h2>
+
 		<h2>Inserisci i tuoi dati</h2>
 	</hgroup>
 	<f:view>
@@ -23,7 +26,7 @@
 				Nome:
 				<h:inputText value="#{clienteController.nome}" required="true"
 					requiredMessage="Questo campo e' obbligatorio!" id="nome" />
-					<h:message for="nome" />
+				<h:message for="nome" />
 			</div>
 			<div>
 				Cognome:

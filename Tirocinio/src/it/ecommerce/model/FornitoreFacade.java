@@ -12,17 +12,17 @@ import javax.persistence.Query;
 @Stateless(name="fFacade")
 public class FornitoreFacade
 {
-  @PersistenceContext(unitName="ecommerce-unit")
-  private EntityManager em;
-  
-  public Fornitore createFornitore(String nome, String iva, String indirizzo, String mail, String telefono) {
-	  Fornitore f = new Fornitore(nome, iva, indirizzo, mail, telefono);
+	@PersistenceContext(unitName="ecommerce-unit")
+	private EntityManager em;
 
-			  em.persist(f);
+	public Fornitore createFornitore(String nome, String iva, String indirizzo, String mail, String telefono) {
+		Fornitore f = new Fornitore(nome, iva, indirizzo, mail, telefono);
 
-	  return f;
-  }
-  
+		em.persist(f);
+
+		return f;
+	}
+
 	public Fornitore findFornitoreByNome(String nome)  {
 		Fornitore fornitore = null;
 		try {
@@ -33,9 +33,8 @@ public class FornitoreFacade
 		}
 		return fornitore;
 	}
-	
+
 	public void eliminaFornitore(Fornitore fornitore) {
 		em.remove(fornitore);
 	}
 }
-  

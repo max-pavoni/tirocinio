@@ -34,13 +34,13 @@
 		<managed-bean-class>it.ecommerce.controller.AmministratoreController</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
-		<managed-bean>
+
+	<managed-bean>
 		<managed-bean-name>fornitoreController</managed-bean-name>
 		<managed-bean-class>it.ecommerce.controller.FornitoreController</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 
 	<navigation-rule>
 		<from-view-id>/index.jsp</from-view-id>
@@ -148,7 +148,7 @@
 			<to-view-id>/secured/amministratoreHome.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>riprovaLoginAdmin</from-outcome>
 			<to-view-id>/riprovaLoginAdmin.jsp</to-view-id>
 			<redirect />
@@ -186,17 +186,17 @@
 			<to-view-id>/prodotti.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>fornitore</from-outcome>
 			<to-view-id>/fornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>modificaProdotto</from-outcome>
 			<to-view-id>/secured/modificaProdotto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-						<navigation-case>
+		<navigation-case>
 			<from-outcome>aggiungiFornitore</from-outcome>
 			<to-view-id>/secured/aggiungiFornitore.jsp</to-view-id>
 			<redirect />
@@ -239,7 +239,7 @@
 
 	<navigation-rule>
 		<from-view-id>/private/prodottoInserito.jsp</from-view-id>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>aggiungiFornitore</from-outcome>
 			<to-view-id>/secured/aggiungiFornitore.jsp</to-view-id>
 			<redirect />
@@ -250,79 +250,79 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
-		<navigation-rule>
+
+	<navigation-rule>
 		<from-view-id>/secured/aggiungiFornitore.jsp</from-view-id>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>fornitoreAggiunto</from-outcome>
 			<to-view-id>/secured/fornitoreAggiunto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-						<navigation-case>
+		<navigation-case>
 			<from-outcome>erroreInserimentoFornitore</from-outcome>
 			<to-view-id>/secured/erroreInserimentoFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
-				<navigation-rule>
+
+	<navigation-rule>
 		<from-view-id>/fornitore.jsp</from-view-id>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>fornitoreEliminato</from-outcome>
 			<to-view-id>/secured/fornitoreEliminato.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
-				<navigation-rule>
+
+	<navigation-rule>
 		<from-view-id>/secured/rimuoviFornitoreDaProdotto.jsp</from-view-id>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>fornitoreEliminato</from-outcome>
 			<to-view-id>/secured/fornitoreAggiunto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-						<navigation-case>
+		<navigation-case>
 			<from-outcome>erroreRimozioneFornitore</from-outcome>
 			<to-view-id>/secured/erroreRimozioneFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-					<navigation-rule>
+	<navigation-rule>
 		<from-view-id>/secured/erroreRimozioneFornitore.jsp</from-view-id>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>fornitoreEliminato</from-outcome>
 			<to-view-id>/secured/fornitoreEliminato.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-						<navigation-case>
+		<navigation-case>
 			<from-outcome>erroreRimozioneFornitore</from-outcome>
 			<to-view-id>/secured/erroreRimozioneFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
-				<navigation-rule>
+
+	<navigation-rule>
 		<from-view-id>/secured/erroreInserimentoFornitore.jsp</from-view-id>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>fornitoreAggiunto</from-outcome>
 			<to-view-id>/secured/fornitoreAggiunto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-						<navigation-case>
+		<navigation-case>
 			<from-outcome>erroreInserimentoFornitore</from-outcome>
 			<to-view-id>/secured/erroreInserimentoFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
-				<navigation-rule>
+
+	<navigation-rule>
 		<from-view-id>/secured/fornitoreAggiunto.jsp</from-view-id>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>aggiungiFornitore</from-outcome>
 			<to-view-id>/secured/aggiungiFornitore.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-						<navigation-case>
+		<navigation-case>
 			<from-outcome>prodotti</from-outcome>
 			<to-view-id>/prodotti.jsp</to-view-id>
 			<redirect />
@@ -351,13 +351,13 @@
 			<redirect />
 		</navigation-case>
 		<navigation-case>
-		<from-outcome>prodottoRimosso</from-outcome>
+			<from-outcome>prodottoRimosso</from-outcome>
 			<to-view-id>/secured/prodottoRimosso.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
-		<navigation-rule>
+
+	<navigation-rule>
 		<from-view-id>/secured/modificaProdotto.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>prodottoModificato</from-outcome>
@@ -374,8 +374,8 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
-		<navigation-rule>
+
+	<navigation-rule>
 		<from-view-id>/secured/prodottoModificato.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>prodotti</from-outcome>
@@ -418,7 +418,7 @@
 
 	<navigation-rule>
 		<from-view-id>/secured/listaOrdiniDaEvadere.jsp</from-view-id>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>ordine</from-outcome>
 			<to-view-id>/private/ordine.jsp</to-view-id>
 			<redirect />
@@ -437,12 +437,12 @@
 			<to-view-id>/private/listaOrdini.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>prodotto</from-outcome>
 			<to-view-id>/prodotto.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>prodotti</from-outcome>
 			<to-view-id>/prodotti.jsp</to-view-id>
 			<redirect />
@@ -457,7 +457,7 @@
 			<to-view-id>/private/modificaRigaOrdine.jsp</to-view-id>
 			<redirect />
 		</navigation-case>
-				<navigation-case>
+		<navigation-case>
 			<from-outcome>listaOrdiniDaEvadere</from-outcome>
 			<to-view-id>/secured/listaOrdiniDaEvadere.jsp</to-view-id>
 			<redirect />

@@ -16,56 +16,56 @@
 
 	<f:view>
 		<h:form id="signup">
-				<div class="header">
-					<h3>Nuovo prodotto:</h3>
-					<p>inserisci i dati</p>
-				</div>
-				<div class="sep"></div>
-				<div class="inputs">
-					<div align="left">
-						<p>
-							Codice:
-							<h:inputText value="#{prodottoController.codice}" required="true"
-								requiredMessage="Questo campo è obbligatorio!" id="codice" />
-							<h:message for="codice" />
-						</p>
-						<p>
-							Nome:
-							<h:inputText value="#{prodottoController.nome}" required="true"
-								requiredMessage="Questo campo è obbligatorio!" id="nome" />
-							<h:message for="nome" />
-						</p>
+			<div class="header">
+				<h3>Nuovo prodotto:</h3>
+				<p>inserisci i dati</p>
+			</div>
+			<div class="sep"></div>
+			<div class="inputs">
+				<div align="left">
+					<p>
+						Codice:
+						<h:inputText value="#{prodottoController.codice}" required="true"
+							requiredMessage="Questo campo è obbligatorio!" id="codice" />
+						<h:message for="codice" />
+					</p>
+					<p>
+						Nome:
+						<h:inputText value="#{prodottoController.nome}" required="true"
+							requiredMessage="Questo campo è obbligatorio!" id="nome" />
+						<h:message for="nome" />
+					</p>
 
-						<p>
-							Costo:
-							<h:inputText value="#{prodottoController.costo}" required="true"
-								requiredMessage="Questo campo è obbligatorio!" id="costo" />
-							<h:message for="costo" />
-						</p>
-						<p>
-							Quantita':
-							<h:inputText value="#{prodottoController.quantita}"
-								required="true" requiredMessage="Questo campo è obbligatorio!"
-								id="quantita" />
-							<h:message for="quantita" />
-						</p>
-						<p>
-							Descrizione:
-							<h:inputTextarea value="#{prodottoController.descrizione}"
-								cols="20" rows="9" validatorMessage="max 250 caratteri"
-								id="descrizione">
-								<f:validateLength maximum="250" />
-							</h:inputTextarea>
-							<h:message for="descrizione" />
-						</p>
-						<p>
-							<h:commandButton value="Invia"
-								action="#{prodottoController.createProdotto}" />
-						</p>
-					</div>
-					<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'>
-						Torna al tuo Pannello di Controllo</a>
+					<p>
+						Costo:
+						<h:inputText value="#{prodottoController.costo}" required="true"
+							requiredMessage="Questo campo è obbligatorio!" id="costo" />
+						<h:message for="costo" />
+					</p>
+					<p>
+						Quantita':
+						<h:inputText value="#{prodottoController.quantita}"
+							required="true" requiredMessage="Questo campo è obbligatorio!"
+							id="quantita" />
+						<h:message for="quantita" />
+					</p>
+					<p>
+						Descrizione:
+						<h:inputTextarea value="#{prodottoController.descrizione}"
+							cols="20" rows="9" validatorMessage="max 250 caratteri"
+							id="descrizione">
+							<f:validateLength maximum="250" />
+						</h:inputTextarea>
+						<h:message for="descrizione" />
+					</p>
+					<p>
+						<h:commandButton value="Invia"
+							action="#{prodottoController.createProdotto}" />
+					</p>
 				</div>
+				<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'>
+					Torna al tuo Pannello di Controllo</a>
+			</div>
 		</h:form>
 	</f:view>
 

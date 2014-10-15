@@ -16,25 +16,25 @@
 
 	<f:view>
 		<h:form id="signup">
-				<div class="header">
-					<h3>Rimuovi fornitore:</h3>
-					<p>inserisci il nome del Fornitore da rimuovere</p>
+			<div class="header">
+				<h3>Rimuovi fornitore:</h3>
+				<p>inserisci il nome del Fornitore da rimuovere</p>
+			</div>
+			<div class="sep"></div>
+			<div class="inputs">
+				<div align="left">
+					<p>
+						<h:inputText value="#{fornitoreController.nome}" required="true"
+							requiredMessage="Questo campo è obbligatorio!" id="nome" />
+						<h:message for="nome" />
+					</p>
+					<p>
+						<h:commandButton value="Invia"
+							action="#{prodottoController.confermaRimozioneFornitoreDaProdotto(fornitoreController.getFornitoreByNome(fornitoreController.nome))}" />
+					</p>
 				</div>
-				<div class="sep"></div>
-				<div class="inputs">
-					<div align="left">
-						<p>
-							<h:inputText value="#{fornitoreController.nome}" required="true"
-								requiredMessage="Questo campo è obbligatorio!" id="nome" />
-							<h:message for="nome" />
-						</p>
-												<p>
-							<h:commandButton value="Invia"
-								action="#{prodottoController.confermaRimozioneFornitoreDaProdotto(fornitoreController.getFornitoreByNome(fornitoreController.nome))}" />
-						</p>
-						</div>
-						</div>
-						</h:form>
-						</f:view>
-						</body>
-						</html>
+			</div>
+		</h:form>
+	</f:view>
+</body>
+</html>

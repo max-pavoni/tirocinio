@@ -12,18 +12,19 @@
 </head>
 <body>
 	<f:view>
-				<h1>Ciao ${clienteController.cliente.nome}!</h1>
-				<h2>Cosa vuoi fare?</h2>
-				<ul>
-					<h:form>
-						<li><h:commandLink action="#{prodottoController.listaProdotti}"
-								value="Vai al catalogo" /></li>
-						<li><h:commandLink action="#{ordineController.listaOrdini(clienteController.cliente)}"
-								value="Guarda lo storico dei tuoi ordini" /></li>
-						<li><h:commandLink action="#{clienteController.logout}"
-								value="Logout" /></li>
-					</h:form>
-				</ul>
+		<h1>Ciao ${clienteController.cliente.nome}!</h1>
+		<h2>Cosa vuoi fare?</h2>
+		<ul>
+			<h:form>
+				<li><h:commandLink action="#{prodottoController.listaProdotti}"
+						value="Vai al catalogo" /></li>
+				<li><h:commandLink
+						action="#{ordineController.listaOrdini(clienteController.cliente)}"
+						value="Guarda lo storico dei tuoi ordini" /></li>
+				<li><h:commandLink action="#{clienteController.logout}"
+						value="Logout" /></li>
+			</h:form>
+		</ul>
 
 	</f:view>
 </html>

@@ -15,13 +15,13 @@
 	<f:view>
 		<h:form>
 
-		
+
 			<h:commandLink
 				action="#{ordineController.findOrdine(rigaOrdineController.rigaOrdine.ordine.id)}"
 				value="Torna all'ordine" />
-								<a href='<c:url value="/faces/private/clienteHome.jsp" />'> Vai
-						alla tua Home</a>
-						
+			<a href='<c:url value="/faces/private/clienteHome.jsp" />'> Vai
+				alla tua Home</a>
+
 		</h:form>
 	</f:view>
 </body>

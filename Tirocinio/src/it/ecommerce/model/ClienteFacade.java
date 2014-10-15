@@ -23,7 +23,7 @@ public class ClienteFacade {
 	private EntityManager em;
 
 	public Cliente createCliente(String nome, String cognome, String codiceFiscale, String indirizzo, Date dataNascita,  String email, String password)  throws Exception  {
-		
+
 		Date dataRegistrazione = new Date();
 		Cliente cliente = new Cliente(nome, cognome, codiceFiscale, indirizzo, dataNascita, dataRegistrazione, email, password);
 		try {
@@ -46,7 +46,7 @@ public class ClienteFacade {
 			return cliente;
 
 	}
-	
+
 	public Cliente getCliente(String email){
 		Cliente cliente;
 		try {

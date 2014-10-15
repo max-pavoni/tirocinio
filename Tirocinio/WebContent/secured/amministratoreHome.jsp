@@ -14,25 +14,26 @@
 	<f:view>
 		<h:form>
 
-					<h1>Bentornato
-						${amministratoreController.amministratore.nome}!</h1>
-					<h2>Pannello di controllo:</h2>
-					<ul>		
-							<li><a href='<c:url value="/faces/secured/aggiungiProdotto.jsp" />'>Aggiungi
+			<h1>Bentornato ${amministratoreController.amministratore.nome}!</h1>
+			<h2>Pannello di controllo:</h2>
+			<ul>
+				<li><a
+					href='<c:url value="/faces/secured/aggiungiProdotto.jsp" />'>Aggiungi
 						un Prodotto</a></li>
-						<li><h:commandLink action="#{prodottoController.listaProdotti}"
-								value="Vai al catalogo" /></li>
-						<li><h:commandLink action="#{partitaController.listaPartite}"
-								value="Aggiungi cliente" /></li>
-						<li><h:commandLink action="#{ordineController.listaOrdiniDaEvadere}"
-								value="Evadi ordini" /></li>
-						<li><a
-							href='<c:url value="/faces/registrazioneAmministratore.jsp" />'>
-								Registra un altro Amministratore</a></li>
-						<li><h:commandLink
-								action="#{amministratoreController.logout}" value="Logout" /></li>
+				<li><h:commandLink action="#{prodottoController.listaProdotti}"
+						value="Vai al catalogo" /></li>
+				<li><h:commandLink action="#{partitaController.listaPartite}"
+						value="Aggiungi cliente" /></li>
+				<li><h:commandLink
+						action="#{ordineController.listaOrdiniDaEvadere}"
+						value="Evadi ordini" /></li>
+				<li><a
+					href='<c:url value="/faces/registrazioneAmministratore.jsp" />'>
+						Registra un altro Amministratore</a></li>
+				<li><h:commandLink action="#{amministratoreController.logout}"
+						value="Logout" /></li>
 
-					</ul>
+			</ul>
 
 		</h:form>
 	</f:view>

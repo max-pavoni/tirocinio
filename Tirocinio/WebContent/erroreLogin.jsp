@@ -12,25 +12,25 @@
 </head>
 <body>
 	<f:view>
-			<c:if test="${clienteController.cliente != null }">
-		<h:form>
-			<div>Le credenziali da te inserite non sono corrette! Riprova:</div>
-			<div>
-				e-mail:
-				<h:inputText value="#{clienteController.email}" required="true"
-					requiredMessage="Questo campo è obbligatorio!" id="email" />
-				<h:message for="email" />
-				password:
-				<h:inputSecret value="#{clienteController.password}" required="true"
-					requiredMessage="Questo campo è obbligatorio!">
-				</h:inputSecret>
-				<h:message for="password" />
-			</div>
-			<div align="center">
-				<h:commandButton id="bottone" value="login"
-					action="#{clienteController.login}" />
-			</div>
-		</h:form>
+		<c:if test="${clienteController.cliente != null }">
+			<h:form>
+				<div>Le credenziali da te inserite non sono corrette! Riprova:</div>
+				<div>
+					e-mail:
+					<h:inputText value="#{clienteController.email}" required="true"
+						requiredMessage="Questo campo è obbligatorio!" id="email" />
+					<h:message for="email" />
+					password:
+					<h:inputSecret value="#{clienteController.password}"
+						required="true" requiredMessage="Questo campo è obbligatorio!">
+					</h:inputSecret>
+					<h:message for="password" />
+				</div>
+				<div align="center">
+					<h:commandButton id="bottone" value="login"
+						action="#{clienteController.login}" />
+				</div>
+			</h:form>
 		</c:if>
 	</f:view>
 </body>
