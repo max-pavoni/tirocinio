@@ -33,7 +33,7 @@ public class Fornitore
 	private String mail;
 	@Column
 	private String telefono;
-	@ManyToMany(cascade = {CascadeType.MERGE},  fetch=FetchType.EAGER)
+	@ManyToMany(cascade = {CascadeType.MERGE})
 	private List<Prodotto> prodotti;
 
 	public Fornitore() {}

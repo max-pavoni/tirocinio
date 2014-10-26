@@ -10,7 +10,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>E-COMMERCE - RIMUOVI FORNITORE</title>
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="/Tirocinio/faces/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 

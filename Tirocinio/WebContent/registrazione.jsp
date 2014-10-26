@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>E-COMMERCE - REGISTRAZIONE</title>
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="/Tirocinio/faces/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="background-color: #a8f7ff;">
 

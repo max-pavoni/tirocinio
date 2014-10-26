@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="/Tirocinio/faces/css/style.css" rel="stylesheet" type="text/css" />
 <title>E-COMMERCE - LA TUA HOME</title>
 </head>
 <body>

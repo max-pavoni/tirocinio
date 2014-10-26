@@ -9,7 +9,7 @@
 <title>E-COMMERCE - REGISTRAZIONE EFFETTUATA!</title>
 <meta http-equiv="refresh"
 	content="2; url=faces/private/clienteHome.jsp" />
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="/Tirocinio/faces/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="background-color: #a8f7ff;">
 

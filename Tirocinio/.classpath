@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/bval-core-0.5.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/bval-jsr303-0.5.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/catalina.jar"/>
@@ -47,7 +48,7 @@
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/myfaces-impl-2.1.10.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openejb-api-4.5.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openejb-client-4.5.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openejb-core-4.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openejb-core-4.5.2.jar" sourcepath="C:/Users/Home/.m2/repository/org/apache/openejb/openejb-core/4.5.2/openejb-core-4.5.2-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openejb-cxf-rs-4.5.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openejb-cxf-transport-4.5.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openejb-ejbd-4.5.2.jar"/>
@@ -60,7 +61,7 @@
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openejb-loader-4.5.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openejb-rest-4.5.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openejb-server-4.5.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openjpa-asm-shaded-2.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openjpa-asm-shaded-2.2.0.jar" sourcepath="C:/Users/Home/.m2/repository/org/apache/openejb/patch/openjpa-asm-shaded/2.2.0/openjpa-asm-shaded-2.2.0-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openwebbeans-ee-1.1.8.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openwebbeans-ee-common-1.1.8.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/openwebbeans-ejb-1.1.8.jar"/>
@@ -103,5 +104,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container/test-app"/>
+	<classpathentry kind="lib" path="C:/Users/Home/MAX/vagrant/lib/taglibs-input.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

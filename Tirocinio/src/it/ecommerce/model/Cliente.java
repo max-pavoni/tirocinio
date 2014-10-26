@@ -39,7 +39,7 @@ public class Cliente
 	private String password;
 	@Column
 	private Date dataNascita;
-	@OneToMany(mappedBy="cliente", cascade={CascadeType.REMOVE}, fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="cliente", cascade={CascadeType.REMOVE})
 	private List<Ordine> ordini;
 
 	public Cliente() {}

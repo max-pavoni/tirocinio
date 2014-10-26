@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="/Tirocinio/faces/css/style.css" rel="stylesheet" type="text/css" />
 <title>E-COMMERCE - ACCEDI COME AMMINISTRATORE</title>
 </head>
 <body>

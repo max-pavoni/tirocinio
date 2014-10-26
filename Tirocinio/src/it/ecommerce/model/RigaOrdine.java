@@ -30,7 +30,7 @@ public class RigaOrdine
 	private Integer quantita;
 	@Column(nullable=false)
 	private Double costoTotale;
-	@ManyToOne(cascade = {CascadeType.MERGE}, fetch=FetchType.EAGER)
+	@ManyToOne(cascade = {CascadeType.MERGE})
 	private Ordine ordine;
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Prodotto prodotto;

@@ -2,6 +2,7 @@
     <wb-module deploy-name="Tirocinio">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
         <property name="context-root" value="Tirocinio"/>
         <property name="java-output-path" value="/Tirocinio/build/classes"/>
     </wb-module>

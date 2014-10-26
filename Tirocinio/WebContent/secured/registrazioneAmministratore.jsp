@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="/Tirocinio/faces/css/style.css" rel="stylesheet" type="text/css" />
 <title>E-COMMERCE - REGISTRA AMMINISTRATORE</title>
 </head>
 <body style="background-color: #a8f7ff;">

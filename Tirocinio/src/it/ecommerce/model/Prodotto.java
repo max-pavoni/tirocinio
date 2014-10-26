@@ -40,7 +40,7 @@ public class Prodotto
 	private String descrizione;
 	@ManyToMany(mappedBy="prodotti", cascade = {CascadeType.MERGE},  fetch=FetchType.EAGER)
 	private List<Fornitore> fornitori;
-	@OneToMany(mappedBy="prodotto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="prodotto")
 	private List<RigaOrdine> righeOrdine;
 
 	public Prodotto() {}
