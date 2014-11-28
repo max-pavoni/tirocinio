@@ -43,7 +43,21 @@
 
 	
 
+<navigation-rule>
+    		<from-view-id>*</from-view-id>
+	<navigation-case>
+			<from-outcome>prodotti</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listaOrdini</from-outcome>
+			<to-view-id>/private/listaOrdini.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+</navigation-rule>
 
+	
 	<navigation-rule>
 		<from-view-id>/index.jsp</from-view-id>
 		<navigation-case>
@@ -63,6 +77,20 @@
 		</navigation-case>
 	</navigation-rule>
 
+		<navigation-rule>
+		<from-view-id>/login.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>logged</from-outcome>
+			<to-view-id>/prodotti.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erroreLogin</from-outcome>
+			<to-view-id>/erroreLogin.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
 	<navigation-rule>
 		<from-view-id>/erroreLogin.jsp</from-view-id>
 		<navigation-case>

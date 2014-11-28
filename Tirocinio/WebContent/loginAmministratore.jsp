@@ -1,47 +1,112 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+	pageEncoding="US-ASCII"%>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="/Tirocinio/faces/css/style.css" rel="stylesheet" type="text/css" />
-<title>E-COMMERCE - ACCEDI COME AMMINISTRATORE</title>
-</head>
-<body>
-	<h3>Inserisci le tue credenziali di Amministratore:</h3>
-	<f:view>
-		<h:form id="login-form">
+<!DOCTYPE html>
+<html lang="en">
 
-			<div>
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Shop Item - Start Bootstrap Template</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/shop-homepage.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<f:view>
+<h:form>
+	<!-- Page Content -->
+	<div class="container">
+
+		<div class="row">
+			<c:import url="menuBar.jsp" />
+
+			<div class="col-md-5">
+						<c:choose>
+				<c:when test="${amministratoreController.amministratore == null}">
+<h3>Inserisci le tue credenziali di Amministratore:</h3>
+				<div class="thumbnail">
+<p>
 				Pin:
 				<h:inputText value="#{amministratoreController.pin}" required="true"
-					requiredMessage="Questo campo è obbligatorio!" id="pin" />
+					requiredMessage="Questo campo e' obbligatorio!" id="pin" />
 				<h:message for="pin" />
-			</div>
-			<div>
+			</p>
+			<p>
 				Password:
 				<h:inputSecret value="#{amministratoreController.password}"
-					required="true" requiredMessage="Questo campo è obbligatorio!"
+					required="true" requiredMessage="Questo campo e' obbligatorio!"
 					id="password">
 				</h:inputSecret>
 				<h:message for="password" />
+			</p>
+				<p>
+
+				<h:commandButton value="LOGIN"
+					action="#{amministratoreController.login}" styleClass="btn-primary"></h:commandButton>
+
+			</p>
+							</div>
+			</c:when>
+				<c:otherwise>
+				<p><h2> Sei gia' loggato!</h2></p>
+				</c:otherwise>
+				</c:choose>
+				
+			
+
+
+
+
 			</div>
-			<div>
 
-				<h:commandButton value="login"
-					action="#{amministratoreController.login}" />
+		</div>
 
+	</div>
+	<!-- /.container -->
+
+	<div class="container">
+
+		<hr>
+
+		<!-- Footer -->
+		<footer>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>Copyright &copy; Your Website 2014</p>
+				</div>
 			</div>
+		</footer>
 
-			<br />
+	</div>
+	<!-- /.container -->
 
-			<a href='<c:url value="/faces/index.jsp" />'>Torna alla HomePage</a>
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
 
-		</h:form>
-
-	</f:view>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+</h:form>
+</f:view>
 </body>
+
 </html>

@@ -3,54 +3,74 @@
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>E-COMMERCE - DETTAGLI PRODOTTO</title>
-<link href="/Tirocinio/faces/css/style.css" rel="stylesheet" type="text/css" />
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Shop Item - Start Bootstrap Template</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/shop-homepage.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
-	<f:view>
+<f:view>
+<h:form>
+	<!-- Page Content -->
+	<div class="container">
 
+		<div class="row">
+			<c:import url="menuBar.jsp" />
 
-		<h:form id="signup">
-			<div class="header">
-				<h3>DETTAGLI PRODOTTO</h3>
-			</div>
-			<div align="left">
-				<p>Codice: ${prodottoController.prodotto.codice}</p>
-				<p>Nome: ${prodottoController.prodotto.nome}</p>
-				<p>Costo: ${prodottoController.prodotto.costo}</p>
-				<p>Descrizione: ${prodottoController.prodotto.descrizione}</p>
-				<table>
-					<tr>
-						<th>Fornitori:</th>
-						<th></th>
-					</tr>
-					<c:forEach var="fornitore"
-						items="#{prodottoController.prodotto.fornitori}">
-						<tr>
-							<td></td>
-							<td><h:commandLink
-									action="#{fornitoreController.findFornitoreByNome(fornitore.nome)}"
-									value="#{fornitore.nome}" /></td>
-						</tr>
-					</c:forEach>
-				</table>
-				</br>
+			<div class="col-md-9">
 
-				<c:if test="${clienteController.cliente != null}">
+				<div class="thumbnail">
+					<img class="img-responsive" src="http://placehold.it/800x300"
+						alt="">
+					<div class="caption-full">
+						<h4 class="pull-right">Costo:
+							${prodottoController.prodotto.costo}$</h4>
+						<h4>
+							<p>${prodottoController.prodotto.nome}</p>
+						</h4>
+						<p>Descrizione: ${prodottoController.prodotto.descrizione}</p>
+						<c:if test="${amministratoreController.amministratore != null }">
+						<p>Fornitori:</p>
+						<p>
+						<c:forEach var="fornitore" items="#{prodottoController.prodotto.fornitori}">
+						${fornitore.nome}
+						</c:forEach>
+						</p>
+						</c:if>
+					<c:if test="${clienteController.cliente != null}">
 					<table>
 						<tr>
 							<th></th>
-							<th>Quantita'</th>
+							<th>Quantita':</th>
 						</tr>
 						<tr>
-							<td><h:commandLink
+							<td class="pull-right"><h:commandButton 
 									action="#{rigaOrdineController.createRigaOrdine(prodottoController.prodotto, ordineController.getOrdineAperto(clienteController.cliente))}"
 									value="Aggiungi al carrello">
-								</h:commandLink></td>
+								</h:commandButton></td>
 							<td><h:inputText value="#{rigaOrdineController.quantita}"
 									id="quantita"
 									validatorMessage="Il valore inserito non e' valido!"
@@ -61,8 +81,7 @@
 					</table>
 
 				</c:if>
-			</div>
-			<c:if test="${amministratoreController.amministratore != null}">
+							<c:if test="${amministratoreController.amministratore != null}">
 				<div>
 					<h:commandLink
 						action="#{prodottoController.findProdottoDaAggiornare(prodottoController.prodotto.id)}"
@@ -78,11 +97,52 @@
 						value="Rimuovi Fornitore" />
 				</div>
 			</c:if>
-			<div>
-				<a href='<c:url value="/faces/prodotti.jsp" />'>Torna al
-					catalogo</a>
+					</div>
+					
+					<div class="ratings">
+						<p class="pull-right">3 reviews</p>
+						<p>
+							<span class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star-empty"></span> 4.0 stars
+						</p>
+					</div>
+				</div>
+
+
+
 			</div>
-		</h:form>
-	</f:view>
+
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+	<div class="container">
+
+		<hr>
+
+		<!-- Footer -->
+		<footer>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>Copyright &copy; Your Website 2014</p>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<!-- /.container -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+</h:form>
+</f:view>
 </body>
+
 </html>

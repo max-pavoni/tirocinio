@@ -16,7 +16,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-
+@RunWith(Arquillian.class)
 public class ProdottoFacadeTest {
 
 	private static EntityManagerFactory emf;

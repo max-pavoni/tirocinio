@@ -59,7 +59,7 @@ public class FornitoreController {
 
 	public Fornitore getFornitoreByNome(String nome) {
 
-		return this.fornitore = this.fornitoreFacade.findFornitoreByNome(nome);
+		return this.fornitoreFacade.findFornitoreByNome(nome);
 
 	}
 

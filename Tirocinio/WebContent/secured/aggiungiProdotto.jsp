@@ -1,21 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+	pageEncoding="US-ASCII"%>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="en">
 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>E-COMMERCE - AGGIUNGI PRODOTTO</title>
-<link href="/Tirocinio/faces/css/style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
 
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Shop Item - Start Bootstrap Template</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="../css/shop-homepage.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
 	<f:view>
-		<h:form id="signup">
+		<h:form>
+			<!-- Page Content -->
+			<div class="container">
+
+				<div class="row">
+					<c:import url="../menuBar.jsp" />
+
+					<div class="col-md-5">
 			<div class="header">
 				<h3>Nuovo prodotto:</h3>
 				<p>inserisci i dati</p>
@@ -26,26 +51,26 @@
 					<p>
 						Codice:
 						<h:inputText value="#{prodottoController.codice}" required="true"
-							requiredMessage="Questo campo è obbligatorio!" id="codice" />
+							requiredMessage="Questo campo Ã¨ obbligatorio!" id="codice" />
 						<h:message for="codice" />
 					</p>
 					<p>
 						Nome:
 						<h:inputText value="#{prodottoController.nome}" required="true"
-							requiredMessage="Questo campo è obbligatorio!" id="nome" />
+							requiredMessage="Questo campo Ã¨ obbligatorio!" id="nome" />
 						<h:message for="nome" />
 					</p>
 
 					<p>
 						Costo:
 						<h:inputText value="#{prodottoController.costo}" required="true"
-							requiredMessage="Questo campo è obbligatorio!" id="costo" />
+							requiredMessage="Questo campo Ã¨ obbligatorio!" id="costo" />
 						<h:message for="costo" />
 					</p>
 					<p>
 						Quantita':
 						<h:inputText value="#{prodottoController.quantita}"
-							required="true" requiredMessage="Questo campo è obbligatorio!"
+							required="true" requiredMessage="Questo campo Ã¨ obbligatorio!"
 							id="quantita" />
 						<h:message for="quantita" />
 					</p>
@@ -66,8 +91,16 @@
 				<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'>
 					Torna al tuo Pannello di Controllo</a>
 			</div>
-		</h:form>
-	</f:view>
+			</div>
+				</div>
+			</div>
+			<!-- jQuery -->
+			<script src="../js/jquery.js"></script>
 
+			<!-- Bootstrap Core JavaScript -->
+			<script src="../js/bootstrap.min.js"></script>
+		</h:form>
+
+	</f:view>
 </body>
 </html>

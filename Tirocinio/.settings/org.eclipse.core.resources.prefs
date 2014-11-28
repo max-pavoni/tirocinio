@@ -1,4 +1,13 @@
 eclipse.preferences.version=1
+encoding//WebContent/erroreLogin.jsp=UTF-8
+encoding//WebContent/login.jsp=UTF-8
+encoding//WebContent/loginAmministratore.jsp=UTF-8
 encoding//WebContent/private/listaOrdini.jsp=UTF-8
 encoding//WebContent/private/ordine.jsp=UTF-8
+encoding//WebContent/prodotti.jsp=UTF-8
 encoding//WebContent/riprovaLoginAdmin.jsp=UTF-8
+encoding//WebContent/secured/aggiungiFornitore.jsp=UTF-8
+encoding//WebContent/secured/aggiungiProdotto.jsp=UTF-8
+encoding//WebContent/secured/erroreInserimentoFornitore.jsp=UTF-8
+encoding//WebContent/secured/erroreRimozioneFornitore.jsp=UTF-8
+encoding//WebContent/secured/rimuoviFornitoreDaProdotto.jsp=UTF-8

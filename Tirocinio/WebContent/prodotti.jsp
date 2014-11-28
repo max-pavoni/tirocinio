@@ -6,60 +6,76 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<link href="/Tirocinio/faces/css/style.css" rel="stylesheet" type="text/css" />
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>E-Commerce - Prodotti</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/shop-homepage.css" rel="stylesheet">
+
 </head>
 <body>
-	<f:view>
-		<h:form>
-			<h1>E-COMMERCE</h1>
-			<h3>Catalogo:</h3>
-			<table>
-				<tr>
-					<th>Codice</th>
-					<th>Nome Prodotto</th>
-					<th>Costo</th>
-					<th></th>
+<f:view>
+<h:form>
 
+
+	<!-- Page Content -->
+	<div class="container">
+
+		<div class="row">
+
+<c:import url="menuBar.jsp" />
+
+			<div class="col-md-9">
+
+				<div class="row">
 					<c:forEach var="prodotto" items="#{prodottoController.prodotti}">
-						<tr>
-							<td align=center>${prodotto.codice}</td>
-							<td align="left"><h:commandLink
+					<div class="col-sm-4 col-lg-4 col-md-4">
+						<div class="thumbnail">
+							<img src="http://placehold.it/320x150" alt="">
+							<div class="caption">
+								<h4 class="pull-right">${prodotto.costo}$</h4>
+								<h4>
+									<h:commandLink
 									action="#{prodottoController.findProdotto(prodotto.id)}"
 									value="#{prodotto.nome}">
-								</h:commandLink></td>
-							<td align=center>${prodotto.costo}</td>
-							<td><c:if
-									test="${amministratoreController.amministratore != null}">
-									<h:commandButton
-										action="#{prodottoController.rimuoviProdotto(prodotto)}"
-										value="Rimuovi" />
-								</c:if></td>
-						</tr>
+								</h:commandLink>
+								</h4>
+								<p>
+									${prodotto.descrizione}
+								</p>
+							</div>
+							<div class="ratings">
+								<p class="pull-right">15 reviews</p>
+								<p>
+									<span class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span>
+								</p>
+							</div>
+						</div>
+					</div>
 					</c:forEach>
-			</table>
-			<c:choose>
-				<c:when test="${clienteController.cliente != null}">
-					<a href='<c:url value="/faces/private/clienteHome.jsp" />'> Vai
-						alla tua Home</a>
-				</c:when>
-				<c:otherwise>
-					<c:choose>
+				</div>
 
+			</div>
 
-						<c:when test="${amministratoreController.amministratore != null}">
-							<a href='<c:url value="/faces/secured/amministratoreHome.jsp" />'>
-								Vai al tuo Pannello di Controllo</a>
-						</c:when>
-						<c:otherwise>
-							<a href='<c:url value="/faces/index.jsp" />'> Torna alla
-								Homepage</a>
-						</c:otherwise>
-					</c:choose>
-				</c:otherwise>
-			</c:choose>
-		</h:form>
-	</f:view>
+		</div>
+
+	</div>
+	<!-- /.container -->
+</h:form>
+</f:view>
 </body>
+
 </html>

@@ -61,9 +61,10 @@ public class ProdottoFacade
 
 	public void rimuoviFornitore(Prodotto prodotto, Fornitore fornitore) {
 		prodotto.getFornitori().remove(fornitore);
-		fornitore.getProdotti().remove(prodotto);
+		Fornitore fornitore2 = em.find(Fornitore.class, fornitore.getId());
+		fornitore2.getProdotti().remove(prodotto);
 		em.merge(prodotto);
-		em.merge(fornitore);
+		em.merge(fornitore2);
 
 	}
 
